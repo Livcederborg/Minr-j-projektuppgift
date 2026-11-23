@@ -7,4 +7,18 @@ class Bomb : ITile
         IsRevealed = true;
         Console.WriteLine("BOOM! Du träffade en bomb!");
     }
+
+    public void Print()
+    {
+        if (!IsRevealed)
+        {
+            Console.Write ("█ ");
+        }
+
+        else
+        {
+            Console.Write("☠︎︎ ");
+        }
+        
+    }
 }

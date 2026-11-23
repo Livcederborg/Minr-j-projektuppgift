@@ -1,6 +1,18 @@
 ﻿
-Console.WriteLine("Hello, World!");
-Console.WriteLine("MIMIMAMOMO");
 
-Console.WriteLine("What does the fox say??");
-Console.ReadLine();
+
+char[,] board =
+{
+    {'B', 'B', '1', '1', '1', '1', 'S', 'S', 'S'},
+    {'2', '3', '2', '2', 'B', '1', 'S', 'S', 'S'},
+    {'B', '2', 'B', '2', '1', '1', 'S', '1', '1'},
+    {'1', '2', '1', '1', 'S', 'S', 'S', '1', 'B'},
+    {'S', 'S', 'S', 'S', 'S', 'S', 'S', '2', '2'},
+    {'S', 'S', '1', '1', '1', '1', '1', '2', 'B'},
+    {'S', 'S', '1', 'B', '1', '1', 'B', '3', '2'},
+    {'S', 'S', '1', '1', '2', '2', '2', '2', 'B'},
+    {'S', 'S', 'S', 'S', '1', 'B', '1', '1', 'S'},
+};
+
+GameBoard gameBoard = new GameBoard(board);
+gameBoard.PrintBoard();

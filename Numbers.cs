@@ -13,4 +13,9 @@ class Numbers : ITile
         IsRevealed = true;
         Console.WriteLine(BombCount);
     }
+
+    public void Print()
+    {
+        
+    }
 }
