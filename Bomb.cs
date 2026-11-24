@@ -1,7 +1,7 @@
 class Bomb : ITile
 {
      public bool IsRevealed { get; set; }
-
+    
     public void Reveal()
     {
         IsRevealed = true;
