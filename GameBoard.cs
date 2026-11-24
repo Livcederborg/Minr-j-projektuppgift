@@ -21,19 +21,11 @@ class GameBoard
         {
             for (int col = 0; col < Width; col++)
             {
-                //hur ska vi komma åt isrevealed från rutora? if (Tiles [row, col] !IsRevealed) 
-                if (Tiles[row, col] is Bomb)
-                {
-                    Tiles[row, col].Print();
-                }
-                else if (Tiles[row, col] is SafeSpace)
-                {
-                    Console.Write("𖹭 ");
-                }
-                else if (Tiles[row, col] is Numbers number)
-                {
-                    Console.Write(number.BombCount + " ");
-                }
+                
+                
+                Tiles[row, col].Print();
+                
+                
             }
 
             Console.WriteLine();
@@ -42,3 +34,4 @@ class GameBoard
     
     
 }
+

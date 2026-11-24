@@ -10,6 +10,15 @@ class SafeSpace : ITile
 
     public void Print()
     {
+          if (!IsRevealed)
+        {
+            Console.Write ("◼ ");
+        }
+
+        else
+        {
+            Console.Write("𖹭 ");
+        }
         
     }
 }

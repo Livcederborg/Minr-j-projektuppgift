@@ -16,6 +16,14 @@ class Numbers : ITile
 
     public void Print()
     {
-        
+        if (!IsRevealed)
+        {
+            Console.Write ("◼ ");
+        }
+
+        else
+        {
+            Console.Write(BombCount + " ");
+        }
     }
 }

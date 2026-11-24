@@ -12,7 +12,7 @@ class Bomb : ITile
     {
         if (!IsRevealed)
         {
-            Console.Write ("█ ");
+            Console.Write ("◼ ");
         }
 
         else
