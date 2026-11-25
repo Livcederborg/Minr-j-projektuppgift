@@ -15,12 +15,17 @@ char[,] board =
 };
 
 Position position = new Position (5, 0, board.GetLength(0), board.GetLength(1));
-GameBoard gameBoard = new GameBoard(board, position);
+IGameMode gameMode = new SurvivalMode ();
+GameBoard gameBoard = new GameBoard(board, position, gameMode);
 gameBoard.PrintBoard(position);
+GameRules gamerules = new GameRules();
+
+KeyboardInput input = new KeyboardInput();
 
 while (true)
 {
     Console.Clear();
+    gamerules.Print();
 
     gameBoard.PrintBoard(position);
 
@@ -32,5 +37,7 @@ while (true)
     if (key == ConsoleKey.Escape)
         break;
 
-    position.Move(key);
+    input.HandleInput(key, position, gameBoard);
+
+    
 }

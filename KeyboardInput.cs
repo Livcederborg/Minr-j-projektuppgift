@@ -1,15 +1,25 @@
 class KeyboardInput
 {
-    public IPlayerAction ReadAction()
+    public void HandleInput(ConsoleKey key, Position position, GameBoard gameBoard)
     {
-        ConsoleKey key = Console.ReadKey(true).Key;
+        switch (key)
+        {
+            case ConsoleKey.UpArrow:
+            case ConsoleKey.DownArrow:
+            case ConsoleKey.LeftArrow:
+            case ConsoleKey.RightArrow:
+                position.Move(key);
+                break;
 
-        if (key == ConsoleKey.Spacebar)
-            return new RevealAction();
+            case ConsoleKey.Spacebar:
+                gameBoard.PerformAction(
+                    position, new RevealAction());
+                break;
 
-        if (key == ConsoleKey.F)
-            return new FlagAction();
-
-        return null;
+            case ConsoleKey.F:
+                gameBoard.PerformAction(
+                    position, new FlagAction());
+                break;
+        }
     }
 }

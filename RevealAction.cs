@@ -1,7 +1,7 @@
 class RevealAction : IPlayerAction
 {
-    public void Execute(GameBoard board, Position position)
+          public void Execute(ITile tile, IGameMode gameMode)
     {
-        board.RevealTile(position);
+        tile.Reveal(gameMode);
     }
-}
+    }

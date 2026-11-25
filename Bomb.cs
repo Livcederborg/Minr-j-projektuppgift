@@ -1,16 +1,21 @@
 class Bomb : ITile
 {
-     public bool IsRevealed { get; set; }
+    private bool IsRevealed;
+    private bool IsFlagged;
     
-    public void Reveal()
+    public void Reveal(IGameMode gameMode)
     {
         IsRevealed = true;
-        Console.WriteLine("BOOM! Du träffade en bomb!");
+        gameMode.BombDamage(this);
     }
 
     public void Print()
     {
-        if (!IsRevealed)
+        if (IsFlagged)
+        {
+            Console.Write ("⚐ "); 
+        }
+        else if (!IsRevealed)
         {
             Console.Write ("◼ ");
         }
@@ -21,4 +26,10 @@ class Bomb : ITile
         }
         
     }
+
+   public void PlaceFlag()
+    {
+        IsFlagged = true;
+    }
+
 }

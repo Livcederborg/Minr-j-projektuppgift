@@ -1,7 +1,7 @@
 public interface ITile 
 {
-     bool IsRevealed { get; set; }
-
-    void Reveal();
+    void Reveal(IGameMode gamemode);
     void Print();
+
+    void PlaceFlag();
 }

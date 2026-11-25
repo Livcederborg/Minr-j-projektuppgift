@@ -1,14 +1,16 @@
 class Numbers : ITile
 {
-     public bool IsRevealed { get; set; }
+     private bool IsRevealed;
 
-    public int BombCount { get; set; }
+     private bool IsFlagged;
+
+    private int BombCount;
      public Numbers(int bombCount)
     {
         BombCount = bombCount;
     }
 
-    public void Reveal()
+    public void Reveal(IGameMode gameMode)
     {
         IsRevealed = true;
         Console.WriteLine(BombCount);
@@ -16,7 +18,11 @@ class Numbers : ITile
 
     public void Print()
     {
-        if (!IsRevealed)
+        if (IsFlagged)
+        {
+            Console.Write ("⚐ "); 
+        }
+        else if (!IsRevealed)
         {
             Console.Write ("◼ ");
         }
@@ -25,5 +31,10 @@ class Numbers : ITile
         {
             Console.Write(BombCount + " ");
         }
+    }
+
+    public void PlaceFlag()
+    {
+        IsFlagged = true;
     }
 }
