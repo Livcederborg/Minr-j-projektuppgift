@@ -8,6 +8,8 @@ class SafeSpace : ITile
     {
         IsRevealed = true;
         Console.WriteLine("Tom ruta!");
+
+        
     }
 
     public void Print()
@@ -31,5 +33,11 @@ class SafeSpace : ITile
     public void PlaceFlag()
     {
         IsFlagged = true;
+    }
+
+    public bool ShouldReveal ()
+    {
+            return !IsRevealed && !IsFlagged;
+
     }
 }

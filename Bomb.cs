@@ -32,4 +32,9 @@ class Bomb : ITile
         IsFlagged = true;
     }
 
+    public bool ShouldReveal ()
+    {
+        return false;
+    }
+
 }

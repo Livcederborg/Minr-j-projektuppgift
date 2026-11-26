@@ -37,4 +37,9 @@ class Numbers : ITile
     {
         IsFlagged = true;
     }
+
+    public bool ShouldReveal ()
+    {
+        return false;
+    }
 }

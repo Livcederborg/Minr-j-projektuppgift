@@ -2,30 +2,23 @@ using System.Data;
 
 class Position
 {
-    private int row;
-    private int col;
+    
 
     private int height;
     private int width;
 
+    public int Row{get; set;}
+    public int Col {get; set;}
+
     public Position (int startRow, int startCol, int height, int width)
     {
-        row = startRow;
-        col = startCol;
+        Row = startRow;
+        Col = startCol;
         this.width = width;
         this.height = height;
     }
 
-    public int Row()
-    {
-
-        return row;
-    }
-
-    public int Col ()
-    {
-        return col; // Fråga lärarn!
-    }
+ 
 
     public void Print()
     {
@@ -36,23 +29,23 @@ class Position
         switch (key)
         {
             case ConsoleKey.UpArrow:
-                row--;
+                Row--;
                 break;
 
             case ConsoleKey.DownArrow:
-                row++;
+                Row++;
                 break;
 
             case ConsoleKey.LeftArrow:
-                col--;
+                Col--;
                 break;
 
             case ConsoleKey.RightArrow:
-                col++;
+                Col++;
                 break;
         }
 
-        row = Math.Clamp(row, 0, height - 1);
-        col = Math.Clamp(col, 0, width - 1);
+        Row = Math.Clamp(Row, 0, height - 1);
+        Col = Math.Clamp(Col, 0, width - 1);
     }
 }
